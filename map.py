@@ -33,12 +33,13 @@ class Map:
         return toponym_coodrinates, bounded_coords, delta
 
     @staticmethod
-    def get_image(adress):
+    def get_image(adress, z):
         toponym = Map.find_toponym(adress)
 
         map_params = {
             "ll": ",".join([str(toponym[0][0]), str(toponym[0][1])]),
-            "spn": ",".join([str(toponym[2][0]), str(toponym[2][1])]),
+            #"spn": ",".join([str(toponym[2][0]), str(toponym[2][1])]),
+            "z": f"{z}",
             "l": "map"
         }
 
